@@ -9,5 +9,8 @@ step 3 npm i
 step 4 npx @tailwindcss/cli -i ./src/main.css -o ./src/output.css --watch
 step 5 go with liver server
 
-# Link
+# clone Link
 https://github.com/PrajapatiVikrant/student_registration_system.git
+
+# sourse code github link
+https://github.com/PrajapatiVikrant/student_registration_system
