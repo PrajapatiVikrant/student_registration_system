@@ -86,6 +86,7 @@ const registrantion = (e) => {
     studentId.value = ""
     email.value = ""
     contactNo.value = ""
+    alert("Registration successfully");
     renderAllStudent();
 
 }
@@ -98,17 +99,19 @@ const registrantion = (e) => {
 const editOpen = (id) => {
     const student = localStorage.getItem("student") ? JSON.parse(localStorage.getItem("student")) : [];
     const [editStudent] = student.filter((std) => std.id == id);
-    console.log(editStudent)
+   
     const stdName = document.querySelector('#name-edit')
     const studentId = document.querySelector('#studentId-edit')
     const stdEmail = document.querySelector('#email-edit')
     const contactNo = document.querySelector('#contactNo-edit')
+   
     stdName.value = editStudent.name;
     studentId.value = editStudent.id;
     stdEmail.value = editStudent.email;
     contactNo.value = editStudent.contact
     const editSection = document.querySelector("#editSection")
     editSection.classList.remove("scale-0");
+    console.log("hello world")
 
 }
 
@@ -119,6 +122,35 @@ const editStudent = (e) => {
     const studentId = document.querySelector('#studentId-edit')
     const stdEmail = document.querySelector('#email-edit')
     const contactNo = document.querySelector('#contactNo-edit')
+    const validMsg = document.querySelectorAll('.edit-validMsg')
+
+      //validate input feilds
+    
+      if (stdName.value.length <= 3) {
+        console.log("name validate")
+        validMsg[0].innerHTML = "minimum 3 charater are required";
+        return;
+    }
+    console.log("name validate")
+    if (studentId.value <= 0) {
+        validMsg[0].innerHTML = '';
+        validMsg[1].innerHTML = "Id should be greater than 0";
+        return;
+    }
+    console.log("id validate")
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(stdEmail.value)) {
+        validMsg[1].innerHTML = '';
+        validMsg[2].innerHTML = 'email should contain altleast 1 charetor,@,. like v@gmail.com'
+        return;
+    }
+    console.log("email validate")
+    if (contactNo.value.length != 10) {
+        validMsg[2].innerHTML = '';
+        validMsg[3].innerHTML = "contact no's length should be 10"
+        return;
+    }
+    console.log("contact validate")
     const editObj = { name: stdName.value, id: studentId.value, email: stdEmail.value, contact: contactNo.value };
     const student = localStorage.getItem("student") ? JSON.parse(localStorage.getItem("student")) : [];
     const newArr = student.map((std) => {

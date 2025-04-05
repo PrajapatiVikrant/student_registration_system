@@ -14,7 +14,7 @@
 
 
     <!-- edit section default no display when user edit any student then display this section -->
-    <section  id="editSection" class="w-[60%] absolute scale-0 border bg-white z-10 rounded-2xl transition-all ease-linear duration-700">
+    <section  id="editSection" class="w-full md:w-[60%] absolute scale-0 border bg-white z-10 rounded-2xl transition-all ease-linear duration-700">
         <div class="flex justify-end text-3xl">
             <i   onclick="closeEdit()" class="fa-solid fa-xmark cursor-pointer m-3"></i> 
         </div>
@@ -22,13 +22,13 @@
             <fieldset id="regInpCtn" class=" flex flex-col p-3">
                 <legend class="font-bold text-2xl">Registration Form</legend>
                 <input id="name-edit" class="border m-2 p-2 text-2xl" type="text" placeholder="Student Name .." >
-                <p class="validMsg text-[14px] mx-2 px-2 text-red-700"></p>
+                <p class="edit-validMsg text-[14px] mx-2 px-2 text-red-700"></p>
                 <input id="studentId-edit" class="border m-2 p-2 text-2xl" type="number" placeholder="Student Id .." readonly >
-                <p class="validMsg text-[14px] mx-2 px-2 text-red-700"></p>
+                <p class="edit-validMsg text-[14px] mx-2 px-2 text-red-700"></p>
                 <input id="email-edit" class="border m-2 p-2 text-2xl" type="email" placeholder="Student Email Id .." >
-                <p class="validMsg text-[14px] mx-2 px-2 text-red-700"></p>
+                <p class="edit-validMsg text-[14px] mx-2 px-2 text-red-700"></p>
                 <input id="contactNo-edit" class="border m-2 p-2 text-2xl" type="tel" placeholder="Student Contact no .." >
-                <p class="validMsg text-[14px] mx-2 px-2 text-red-700"></p>
+                <p class="edit-validMsg text-[14px] mx-2 px-2 text-red-700"></p>
                 <button class="m-2 p-2 text-2xl border rounded-3xl cursor-pointer hover:bg-black hover:text-white  transition-all duration-700 ease-linear " onclick="editStudent(event)">Edit</button>
             </fieldset>
         </form>
@@ -45,8 +45,7 @@
 
      <!-- header of application -->
     <header class="m-2 mb-5">
-        <h1 class="text-center text-5xl font-bold">Student Registration System</h1>
-    </header>
+        <h1 class="text-center text-2xl md:text-5xl font-bold">Student Registration System</h1>
     <main class="flex flex-col w-full lg:flex-row justify-center  items-center">
 
          <!-- registration section  -->
@@ -72,7 +71,7 @@
 
         <!-- student display section  -->
         <section class="flex flex-col bg-blue-50 justify-center items-center  h-[87vh] flex-1/2">
-            <h2 class="flex  sticky top-0 z-0 shadow:md justify-center items-center m-2 w-[80%]  bg-black w-full text-white p-3 text-2xl">
+            <h2 class="flex  sticky top-0 z-0 shadow:md justify-center items-center m-2   bg-black w-full text-white p-3 text-2xl">
                 Registerd Student
             </h2> 
             <section id="stdCtn" class="shadow-lg overflow-auto w-full h-full flex flex-col justify-center  sm:grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3">
