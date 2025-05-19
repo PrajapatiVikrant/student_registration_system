@@ -1,6 +1,15 @@
 {
+  "name": "student_registration_system",
+  "version": "1.0.0",
+  "description": "This is student registration application",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vikrant Prajapati",
+  "license": "ISC",
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.1",
-    "tailwindcss": "^4.1.1"
+    "@tailwindcss/cli": "^4.1.7",
+    "tailwindcss": "^4.1.7"
   }
 }
